@@ -1,4 +1,4 @@
-import streamlit as st
+import streamlit as st == 1.10.0
 
 st.set_page_config(
     page_title="miltipage app"
