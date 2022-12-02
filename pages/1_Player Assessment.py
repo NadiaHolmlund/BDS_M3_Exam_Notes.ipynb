@@ -69,5 +69,5 @@ from PIL import Image
 
 image = Image.open('app_images/GK.png')
 
-if position == 'GK'
+if position == 'GK':
     st.image(image)
