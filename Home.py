@@ -9,7 +9,6 @@ st.set_page_config(
     layout="wide")
 
 st.title("Intelligent Scouting & Player Assessment")
-st.sidebar.success("select a page above")
 
 with st.container():
     col1, col2 = st.columns(2)
