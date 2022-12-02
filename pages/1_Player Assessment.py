@@ -10,6 +10,4 @@ st.set_page_config(
 
 # Using "with" notation
 with st.sidebar:
-    add_selectbox = st.selectbox(
-        ('Select position'),('GK', 'CD', 'MF')
-    )
+    st.selectbox(('Select position'),('GK', 'CD', 'MF'))
