@@ -12,7 +12,7 @@ st.set_page_config(
 with st.sidebar:
     name = st.text_input('Name')
     st.selectbox(('League'),('Bundesliga', 'Superliga'))
-    position = st.selectbox(('Position'),('GK', 'CD', 'MF', 'etc.'))
+    position = st.selectbox(('Position'),('GK', 'DF', 'MF', 'FW'))
     st.slider('Age', 15, 45, 30)
     metric_1 = st.slider('Metric 1', 0, 100, 50)
     metric_2 = st.slider('Metric 2', 0, 100, 50)
@@ -71,9 +71,16 @@ import streamlit as st
 from PIL import Image
 
 image_gk = Image.open('app_images/GK.png')
-image_cd = Image.open('app_images/DF.png')
+image_df = Image.open('app_images/DF.png')
+image_mf = Image.open('app_images/MF.png')
+image_fw = Image.open('app_images/FW.png')
+
 
 if position == 'GK':
     st.image(image_gk, 'Position')
-elif position == 'CD':
-    st.image(image_cd, 'Position')
+elif position == 'DF':
+    st.image(image_df, 'Position')
+elif position == 'MF':
+    st.image(image_mf, 'Position')
+elif position == 'FW':
+    st.image(image_fw, 'Position')
