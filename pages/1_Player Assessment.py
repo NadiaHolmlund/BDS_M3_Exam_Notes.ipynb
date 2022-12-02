@@ -67,5 +67,5 @@ st.plotly_chart(fig, use_container_width=True)
 import streamlit as st
 from PIL import Image
 
-image = Image.open('NadiaHolmlund/BDS_M3_Exam_Notes.ipynb/app_images/GK.png')
+image = Image.open('app_images/GK.png')
 st.image(image)
