@@ -20,6 +20,4 @@ with st.sidebar:
     st.slider('Metric 4', 0, 100, 1)
     st.slider('Metric 5', 0, 100, 1)
     st.button('Assess Player')
-    with st.spinner('Wait for it...'):
-        time.sleep(5)
-    st.success('Done!')
+    st.spinner(text="In progress...")
