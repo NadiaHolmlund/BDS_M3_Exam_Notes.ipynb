@@ -20,4 +20,3 @@ with st.sidebar:
     st.slider('Metric 4', 0, 100, 1)
     st.slider('Metric 5', 0, 100, 1)
     st.button('Assess Player')
-        #Try to add a spinner
