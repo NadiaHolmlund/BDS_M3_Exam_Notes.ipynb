@@ -12,7 +12,7 @@ st.set_page_config(
 with st.sidebar:
     name = st.text_input('Name')
     st.selectbox(('League'),('Bundesliga', 'Superliga'))
-    st.selectbox(('Position'),('GK', 'CD', 'MF', 'etc.'))
+    position = st.selectbox(('Position'),('GK', 'CD', 'MF', 'etc.'))
     st.slider('Age', 15, 45, 1)
     metric_1 = st.slider('Metric 1', 0, 100, 1)
     metric_2 = st.slider('Metric 2', 0, 100, 1)
@@ -67,5 +67,9 @@ st.plotly_chart(fig, use_container_width=True)
 import streamlit as st
 from PIL import Image
 
-image = Image.open('app_images/GK.png')
-st.image(image)
+if position == GK
+    image = Image.open('app_images/GK.png')
+    st.image(image)
+elif position == CD
+    image = Image.open('app_images/DF.png')
+    st.image(image)
