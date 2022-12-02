@@ -66,6 +66,9 @@ st.plotly_chart(fig, use_container_width=True)
 
 
 
+fig=plt.figure(figsize=(15, 10.38), dpi=100, facecolor='#3E3E40')
+...
+plt.savefig('plotly_add_pitch.png', format='png', bbox_inches='tight', pad_inches=0)
 
 
 import plotly
