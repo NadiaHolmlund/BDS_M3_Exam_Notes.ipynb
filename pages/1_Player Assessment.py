@@ -10,5 +10,6 @@ st.set_page_config(
 
 # Using "with" notation
 with st.sidebar:
-    st.selectbox(('Select League'),('Bundesliga', 'Superliga'))
-    st.selectbox(('Select Position'),('GK', 'CD', 'MF', 'etc.'))
+    st.selectbox(('League'),('Bundesliga', 'Superliga'))
+    st.selectbox(('Position'),('GK', 'CD', 'MF', 'etc.'))
+    st.slider('Age', 15, 45, 1)
