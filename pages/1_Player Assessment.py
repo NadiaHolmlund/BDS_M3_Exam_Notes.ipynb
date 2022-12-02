@@ -70,6 +70,3 @@ from PIL import Image
 if position == GK
     image = Image.open('app_images/GK.png')
     st.image(image)
-elif position == CD
-    image = Image.open('app_images/DF.png')
-    st.image(image)
