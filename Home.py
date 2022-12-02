@@ -16,7 +16,7 @@ with st.container():
 
     with col1:
         st.write("Player Assessment")
-        st.vi("https://static.streamlit.io/examples/cat.jpg")
+        st.image("https://static.streamlit.io/examples/cat.jpg")
 
     with col1:
         st.write("Player Assessment")
