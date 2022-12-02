@@ -14,7 +14,7 @@ with st.sidebar:
     st.selectbox(('League'),('Bundesliga', 'Superliga'))
     st.selectbox(('Position'),('GK', 'CD', 'MF', 'etc.'))
     st.slider('Age', 15, 45, 1)
-    st.slider('Metric 1', 0, 100, 1)
+    metric_1 = st.slider('Metric 1', 0, 100, 1)
     st.slider('Metric 2', 0, 100, 1)
     st.slider('Metric 3', 0, 100, 1)
     st.slider('Metric 4', 0, 100, 1)
@@ -33,13 +33,13 @@ st.write(name)
 import plotly.graph_objects as go
 
 
-categories = ['processing cost','mechanical properties','chemical stability',
-              'thermal stability', 'device integration']
+categories = ['Metric 1','Metric 2','Metric 3',
+              'Metric 4', 'Metric 5']
 
 fig = go.Figure()
 
 fig.add_trace(go.Scatterpolar(
-      r=[1, 5, 2, 2, 3],
+      r=[metric_1, 5, 2, 2, 3],
       theta=categories,
       fill='toself',
       name='Product A'
