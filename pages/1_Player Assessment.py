@@ -57,7 +57,7 @@ fig.update_layout(
 # Plot!
 st.plotly_chart(fig, use_container_width=True)
 
-compare = st.checkbox('Compare with highest rated player')
+compare = st.checkbox('Compare with highest rated player based on position')
 
 
 
