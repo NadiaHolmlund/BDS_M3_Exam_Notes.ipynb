@@ -10,4 +10,5 @@ st.set_page_config(
 
 # Using "with" notation
 with st.sidebar:
-    st.selectbox(('Select position'),('GK', 'CD', 'MF'))
+    st.selectbox(('Select League'),('Bundesliga', 'Superliga'))
+    st.selectbox(('Select Position'),('GK', 'CD', 'MF', 'etc.'))
