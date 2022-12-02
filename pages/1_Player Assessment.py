@@ -64,10 +64,20 @@ fig.update_layout(
 st.plotly_chart(fig, use_container_width=True)
 
 
+
+
+
+
+
+
+
 import streamlit as st
 from PIL import Image
 
-image = Image.open('app_images/GK.png')
+image_gk = Image.open('app_images/GK.png')
+image_cd = Image.open('app_images/DF.png')
 
 if position == 'GK':
-    st.image(image)
+    st.image(image_gk)
+elif position == 'CD':
+    st.image(image_cd)
