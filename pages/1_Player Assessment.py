@@ -10,6 +10,8 @@ st.set_page_config(
 
 # Using "with" notation
 with st.sidebar:
+    st.text_input('Player', 'Life')
+    st.selectbox(('League'),('Bundesliga', 'Superliga'))
     st.selectbox(('League'),('Bundesliga', 'Superliga'))
     st.selectbox(('Position'),('GK', 'CD', 'MF', 'etc.'))
     st.slider('Age', 15, 45, 1)
@@ -18,3 +20,4 @@ with st.sidebar:
     st.slider('Metric 3', 0, 100, 1)
     st.slider('Metric 4', 0, 100, 1)
     st.slider('Metric 5', 0, 100, 1)
+    st.button('Assess Player')
