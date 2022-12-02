@@ -21,25 +21,6 @@ with st.sidebar:
     metric_5 = st.slider('Metric 5', 0, 100, 1)
     st.button('Assess Player')
 
-import streamlit as st
-from PIL import Image
-
-image_gk = Image.open('app_images/GK.png')
-image_cd = Image.open('app_images/DF.png')
-
-if st.button('Assess Player'):
-    if position == 'GK':
-        st.image(image_gk, 'Position')
-    elif position == 'CD':
-        st.image(image_cd, 'Position')
-
-
-
-
-
-
-
-
 
 
 
@@ -84,4 +65,13 @@ st.plotly_chart(fig, use_container_width=True)
 
 
 
+import streamlit as st
+from PIL import Image
 
+image_gk = Image.open('app_images/GK.png')
+image_cd = Image.open('app_images/DF.png')
+
+if position == 'GK':
+    st.image(image_gk, 'Position')
+elif position == 'CD':
+    st.image(image_cd, 'Position')
