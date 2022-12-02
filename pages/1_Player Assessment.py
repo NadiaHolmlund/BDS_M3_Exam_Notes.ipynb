@@ -24,11 +24,10 @@ with st.sidebar:
 import streamlit as st
 from PIL import Image
 
+image_gk = Image.open('app_images/GK.png')
+image_cd = Image.open('app_images/DF.png')
+
 if st.button('Assess Player'):
-
-    image_gk = Image.open('app_images/GK.png')
-    image_cd = Image.open('app_images/DF.png')
-
     if position == 'GK':
         st.image(image_gk, 'Position')
     elif position == 'CD':
