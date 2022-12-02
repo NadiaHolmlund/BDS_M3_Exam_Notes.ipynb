@@ -72,7 +72,7 @@ import plotly
 import plotly.graph_objects as go
 from PIL import Image
 
-img = Image.open('https://i.stack.imgur.com/zQMZj.png')
+img = Image.open('https://i.stack.imgur.com/zQMZj.png', 'rb')
 fig = go.Figure()
 
 fig.add_trace(
