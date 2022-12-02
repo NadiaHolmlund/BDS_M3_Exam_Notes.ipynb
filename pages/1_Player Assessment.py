@@ -64,5 +64,7 @@ fig.update_layout(
 st.plotly_chart(fig, use_container_width=True)
 
 
+from PIL import Image
 
-st.image.open(NadiaHolmlund/BDS_M3_Exam_Notes.ipynb/app_images/DF.png)
+image = image.open('NadiaHolmlund/BDS_M3_Exam_Notes.ipynb/app_images/DF.png)')
+st.image(image)
