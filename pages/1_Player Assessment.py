@@ -23,6 +23,13 @@ with st.sidebar:
 
 st.write(name)
 
+
+
+
+
+
+
+
 import plotly.graph_objects as go
 
 categories = ['processing cost','mechanical properties','chemical stability',
