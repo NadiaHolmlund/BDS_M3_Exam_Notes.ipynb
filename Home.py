@@ -8,5 +8,5 @@ st.set_page_config(
     page_icon="⚽",
     layout="wide")
 
-st.title("Intelligent Scouting and Player Assessment")
+st.title("Intelligent Scouting & Player Assessment")
 st.sidebar.success("select a page above")
