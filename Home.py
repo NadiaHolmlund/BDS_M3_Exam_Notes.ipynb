@@ -19,5 +19,5 @@ with st.container():
         st.image("https://static.streamlit.io/examples/cat.jpg")
 
     with col2:
-        st.write("Player Assessment")
         st.image("https://static.streamlit.io/examples/cat.jpg")
+        st.write("Player Assessment")
