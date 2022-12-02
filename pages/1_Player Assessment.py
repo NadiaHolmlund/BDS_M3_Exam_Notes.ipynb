@@ -10,7 +10,7 @@ st.set_page_config(
 
 # Using "with" notation
 with st.sidebar:
-    st.text_input('Player', 'Life')
+    #st.text_input('Player', 'Life')
     st.selectbox(('League'),('Bundesliga', 'Superliga'))
     st.selectbox(('League'),('Bundesliga', 'Superliga'))
     st.selectbox(('Position'),('GK', 'CD', 'MF', 'etc.'))
