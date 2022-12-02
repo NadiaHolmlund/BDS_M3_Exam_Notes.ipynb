@@ -67,6 +67,7 @@ st.plotly_chart(fig, use_container_width=True)
 import streamlit as st
 from PIL import Image
 
+image = Image.open('app_images/GK.png')
+
 if position == 'GK'
-    image = Image.open('app_images/GK.png')
     st.image(image)
