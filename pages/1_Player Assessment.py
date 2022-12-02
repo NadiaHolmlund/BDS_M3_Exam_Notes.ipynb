@@ -15,10 +15,10 @@ with st.sidebar:
     st.selectbox(('Position'),('GK', 'CD', 'MF', 'etc.'))
     st.slider('Age', 15, 45, 1)
     metric_1 = st.slider('Metric 1', 0, 100, 1)
-    st.slider('Metric 2', 0, 100, 1)
-    st.slider('Metric 3', 0, 100, 1)
-    st.slider('Metric 4', 0, 100, 1)
-    st.slider('Metric 5', 0, 100, 1)
+    metric_2 = st.slider('Metric 2', 0, 100, 1)
+    metric_3 = st.slider('Metric 3', 0, 100, 1)
+    metric_4 = st.slider('Metric 4', 0, 100, 1)
+    metric_5 = st.slider('Metric 5', 0, 100, 1)
     st.button('Assess Player')
 
 st.write(name)
@@ -39,7 +39,7 @@ categories = ['Metric 1','Metric 2','Metric 3',
 fig = go.Figure()
 
 fig.add_trace(go.Scatterpolar(
-      r=[metric_1, 5, 2, 2, 3],
+      r=[metric_1, metric_2, metric_3, metric_4, metric_5],
       theta=categories,
       fill='toself',
       name='Product A'
@@ -55,7 +55,7 @@ fig.update_layout(
   polar=dict(
     radialaxis=dict(
       visible=True,
-      range=[0, 5]
+      range=[0, 10]
     )),
   showlegend=False
 )
