@@ -13,12 +13,13 @@ with st.sidebar:
     name = st.text_input('Name')
     st.selectbox(('League'),('Bundesliga', 'Superliga'))
     position = st.selectbox(('Position'),('GK', 'CD', 'MF', 'etc.'))
-    st.slider('Age', 15, 40, 50)
+    st.slider('Age', 15, 45, )
     metric_1 = st.slider('Metric 1', 0, 100, 50)
     metric_2 = st.slider('Metric 2', 0, 100, 50)
     metric_3 = st.slider('Metric 3', 0, 100, 50)
     metric_4 = st.slider('Metric 4', 0, 100, 50)
     metric_5 = st.slider('Metric 5', 0, 100, 50)
+    compare = st.checkbox('Compare with highest rated player')
     st.button('Assess Player')
 
 
