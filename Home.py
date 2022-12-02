@@ -10,3 +10,14 @@ st.set_page_config(
 
 st.title("Intelligent Scouting & Player Assessment")
 st.sidebar.success("select a page above")
+
+with st.container():
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.header("Player Assessment")
+        st.image("https://static.streamlit.io/examples/cat.jpg")
+
+    with col1:
+        st.header("Player Assessment")
+        st.image("https://static.streamlit.io/examples/cat.jpg")
