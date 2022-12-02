@@ -7,3 +7,9 @@ st.set_page_config(
     page_title="⚽ Player Assessment",
     page_icon="⚽",
     layout="wide")
+
+# Using "with" notation
+with st.sidebar:
+    add_selectbox = st.selectbox(
+        ('Select position'),('GK', 'CD', 'MF')
+    )
