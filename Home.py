@@ -18,6 +18,6 @@ with st.container():
         st.write("Player Assessment")
         st.image("https://static.streamlit.io/examples/cat.jpg")
 
-    with col1:
+    with col2:
         st.write("Player Assessment")
         st.image("https://static.streamlit.io/examples/cat.jpg")
