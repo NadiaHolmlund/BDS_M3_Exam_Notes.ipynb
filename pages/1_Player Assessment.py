@@ -18,6 +18,3 @@ with st.sidebar:
     st.slider('Metric 3', 0, 100, 1)
     st.slider('Metric 4', 0, 100, 1)
     st.slider('Metric 5', 0, 100, 1)
-    st.slider('Metric 6', 0, 100, 1)
-    st.slider('Metric 7', 0, 100, 1)
-    st.slider('Metric 8', 0, 100, 1)
