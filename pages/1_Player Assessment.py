@@ -66,51 +66,63 @@ st.plotly_chart(fig, use_container_width=True)
 
 
 
-fig=plt.figure(figsize=(15, 10.38), dpi=100, facecolor='#3E3E40')
-...
-plt.savefig('plotly_add_pitch.png', format='png', bbox_inches='tight', pad_inches=0)
+def createPitch():
+    
+    #Create figure
+    fig=plt.figure()
+    ax=fig.add_subplot(1,1,1)
 
+    #Pitch Outline & Centre Line
+    plt.plot([0,0],[0,90], color="black")
+    plt.plot([0,130],[90,90], color="black")
+    plt.plot([130,130],[90,0], color="black")
+    plt.plot([130,0],[0,0], color="black")
+    plt.plot([65,65],[0,90], color="black")
+    
+    #Left Penalty Area
+    plt.plot([16.5,16.5],[65,25],color="black")
+    plt.plot([0,16.5],[65,65],color="black")
+    plt.plot([16.5,0],[25,25],color="black")
+    
+    #Right Penalty Area
+    plt.plot([130,113.5],[65,65],color="black")
+    plt.plot([113.5,113.5],[65,25],color="black")
+    plt.plot([113.5,130],[25,25],color="black")
+    
+    #Left 6-yard Box
+    plt.plot([0,5.5],[54,54],color="black")
+    plt.plot([5.5,5.5],[54,36],color="black")
+    plt.plot([5.5,0.5],[36,36],color="black")
+    
+    #Right 6-yard Box
+    plt.plot([130,124.5],[54,54],color="black")
+    plt.plot([124.5,124.5],[54,36],color="black")
+    plt.plot([124.5,130],[36,36],color="black")
+    
+    #Prepare Circles
+    centreCircle = plt.Circle((65,45),9.15,color="black",fill=False)
+    centreSpot = plt.Circle((65,45),0.8,color="black")
+    leftPenSpot = plt.Circle((11,45),0.8,color="black")
+    rightPenSpot = plt.Circle((119,45),0.8,color="black")
+    
+    #Draw Circles
+    ax.add_patch(centreCircle)
+    ax.add_patch(centreSpot)
+    ax.add_patch(leftPenSpot)
+    ax.add_patch(rightPenSpot)
+    
+    #Prepare Arcs
+    leftArc = Arc((11,45),height=18.3,width=18.3,angle=0,theta1=310,theta2=50,color="black")
+    rightArc = Arc((119,45),height=18.3,width=18.3,angle=0,theta1=130,theta2=230,color="black")
 
-import plotly
-import plotly.graph_objects as go
-from PIL import Image
-
-img = Image.open('https://i.stack.imgur.com/zQMZj.png', 'rb')
-fig = go.Figure()
-
-fig.add_trace(
-    go.Scatter(x=[0, 110, 112, 114, 115, 130],
-               y=[0, 65, 55, 49, 53, 90],
-                mode='markers',
-                marker=dict(size=15,
-                color='red'),
-               name='Salah'
-))
-
-# axis hide、yaxis reversed
-fig.update_layout(
-    autosize=False,
-    width=1163,
-    height=783,
-    xaxis=dict(visible=True,autorange=True),
-    yaxis=dict(visible=True,autorange='reversed')
-)
-
-# background image add
-fig.add_layout_image(
-    dict(source=img,
-         xref='x',
-         yref='y',
-         x=0,
-         y=0,
-         sizex=135,
-         sizey=95,
-         sizing='stretch',
-         opacity=0.9,
-         layer='below')
-)
-
-# Set templates
-fig.update_layout(template="plotly_white")
-
-fig.show()
+    #Draw Arcs
+    ax.add_patch(leftArc)
+    ax.add_patch(rightArc)
+    
+    #Tidy Axes
+    plt.axis('off')
+    
+    #Display Pitch
+    plt.show()
+    
+createPitch()
