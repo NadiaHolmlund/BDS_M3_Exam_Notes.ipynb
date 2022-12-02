@@ -15,9 +15,9 @@ with st.container():
     col1, col2 = st.columns(2)
 
     with col1:
-        st.header("Player Assessment")
-        st.image("https://static.streamlit.io/examples/cat.jpg")
+        st.write("Player Assessment")
+        st.vi("https://static.streamlit.io/examples/cat.jpg")
 
     with col1:
-        st.header("Player Assessment")
+        st.write("Player Assessment")
         st.image("https://static.streamlit.io/examples/cat.jpg")
