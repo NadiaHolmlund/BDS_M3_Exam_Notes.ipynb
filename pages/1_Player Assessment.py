@@ -21,11 +21,10 @@ with st.sidebar:
     metric_5 = st.slider('Metric 5', 0, 100, 1)
     st.button('Assess Player')
 
+import streamlit as st
+from PIL import Image
 
 if st.button('Assess Player'):
-
-    import streamlit as st
-    from PIL import Image
 
     image_gk = Image.open('app_images/GK.png')
     image_cd = Image.open('app_images/DF.png')
