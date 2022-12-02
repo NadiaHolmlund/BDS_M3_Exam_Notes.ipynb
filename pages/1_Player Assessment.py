@@ -23,6 +23,6 @@ with st.sidebar:
 
 
 st.button('Assess Player')
-    with st.spinner(text="In progress..."):
-        time.sleep(5)
-    st.success('Done!')
+with st.spinner(text="In progress..."):
+    time.sleep(5)
+st.success('Done!')
