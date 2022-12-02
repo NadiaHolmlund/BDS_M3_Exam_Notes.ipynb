@@ -65,3 +65,4 @@ st.plotly_chart(fig, use_container_width=True)
 
 
 
+st.image('NadiaHolmlund/BDS_M3_Exam_Notes.ipynb/app_images/DF.png')
