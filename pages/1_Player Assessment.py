@@ -78,6 +78,6 @@ image_gk = Image.open('app_images/GK.png')
 image_cd = Image.open('app_images/DF.png')
 
 if position == 'GK':
-    st.image(image_gk)
+    st.image(image_gk, 'Position')
 elif position == 'CD':
-    st.image(image_cd)
+    st.image(image_cd, 'Position')
