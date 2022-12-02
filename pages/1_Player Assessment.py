@@ -20,7 +20,6 @@ with st.sidebar:
     metric_4 = st.slider('Metric 4', 0, 100, 50)
     metric_5 = st.slider('Metric 5', 0, 100, 50)
     st.button('Assess Player')
-    compare = st.checkbox('Compare with highest rated player')
 
 
 
@@ -57,6 +56,8 @@ fig.update_layout(
 
 # Plot!
 st.plotly_chart(fig, use_container_width=True)
+
+compare = st.checkbox('Compare with highest rated player')
 
 
 
