@@ -62,3 +62,52 @@ fig.update_layout(
 
 # Plot!
 st.plotly_chart(fig, use_container_width=True)
+
+
+
+
+
+
+import plotly
+import plotly.graph_objects as go
+from PIL import Image
+
+img = Image.open('./plotly_add_pitch.png')
+fig = go.Figure()
+
+fig.add_trace(
+    go.Scatter(x=[0, 110, 112, 114, 115, 130],
+               y=[0, 65, 55, 49, 53, 90],
+                mode='markers',
+                marker=dict(size=15,
+                color='red'),
+               name='Salah'
+))
+
+# axis hide、yaxis reversed
+fig.update_layout(
+    autosize=False,
+    width=1163,
+    height=783,
+    xaxis=dict(visible=True,autorange=True),
+    yaxis=dict(visible=True,autorange='reversed')
+)
+
+# background image add
+fig.add_layout_image(
+    dict(source=img,
+         xref='x',
+         yref='y',
+         x=0,
+         y=0,
+         sizex=135,
+         sizey=95,
+         sizing='stretch',
+         opacity=0.9,
+         layer='below')
+)
+
+# Set templates
+fig.update_layout(template="plotly_white")
+
+fig.show()
