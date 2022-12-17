@@ -21,7 +21,7 @@ from PIL import Image
 col1, col2 = st.columns(2)
 
 with col1:
-    picture_1 = Image.open('/work/M3/Images/blog-Pitchero_2-768x384-modified.png')
+    picture_1 = Image.open('blog-Pitchero_2-768x384-modified.png')
     st.image(picture_1)
 
 with col2:
