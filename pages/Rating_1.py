@@ -29,7 +29,7 @@ st.markdown(
 
 # Setting up the default sidebar
 st.sidebar.expander('Player Information')
-    player = st.sidebar.text_input((''),('Player'))
+    player = st.sidebar.expander.text_input((''),('Player'))
     col1, col2 = st.sidebar.columns(2)
     team = col1.text_input((''),('Team'))
     age = col1.text_input((''),('Age'))
