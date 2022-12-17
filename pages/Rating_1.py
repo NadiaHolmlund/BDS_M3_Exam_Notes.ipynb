@@ -130,27 +130,8 @@ if position == 'Goalkeeper':
     # Setting up the radar graph
     col2.write('')
     col2.write('')
-    categories =    [GK_fs.iloc[0],
-                    GK_fs.iloc[1],
-                    GK_fs.iloc[2],
-                    GK_fs.iloc[3],
-                    GK_fs.iloc[4],
-                    GK_fs.iloc[5],
-                    GK_fs.iloc[6],
-                    GK_fs.iloc[7],
-                    GK_fs.iloc[8],
-                    GK_fs.iloc[9]]
-    fig.add_trace(go.Scatterpolar(r=    [(feature_0 - 0) / (BL[GK_fs.iloc[0].values[0]].max() - 0) * 100,
-                                        (feature_1 - 0) / (BL[GK_fs.iloc[1].values[0]].max() - 0) * 100,
-                                        (feature_2 - 0) / (BL[GK_fs.iloc[2].values[0]].max() - 0) * 100,
-                                        (feature_3 - 0) / (BL[GK_fs.iloc[3].values[0]].max() - 0) * 100,
-                                        (feature_4 - 0) / (BL[GK_fs.iloc[4].values[0]].max() - 0) * 100,
-                                        (feature_5 - 0) / (BL[GK_fs.iloc[5].values[0]].max() - 0) * 100,
-                                        (feature_6 - 0) / (BL[GK_fs.iloc[6].values[0]].max() - 0) * 100,
-                                        (feature_7 - 0) / (BL[GK_fs.iloc[7].values[0]].max() - 0) * 100,
-                                        (feature_8 - 0) / (BL[GK_fs.iloc[8].values[0]].max() - 0) * 100,
-                                        (feature_9 - 0) / (BL[GK_fs.iloc[9].values[0]].max() - 0) * 100
-                                        ],theta=categories, fill='toself', name=player))
+    categories = ['Feature 0', 'Feature 1', 'Feature 2','Feature 3','Feature 4','Feature 5','Feature 6','Feature 7','Feature 8', 'Feature 9']
+    fig.add_trace(go.Scatterpolar(r=[50, 50, 50, 50, 50, 50, 50, 50, 50, 50]],theta=categories, fill='toself', name=player))
 
     if compare_BL:
         feature_0_BL = BL[GK_fs.iloc[0].values[0]].loc[(BL['Position'] == 'GK') & (BL['Rating'] == BL['Rating'].max())].values[0]
