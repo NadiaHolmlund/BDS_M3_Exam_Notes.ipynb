@@ -29,3 +29,18 @@ with col2:
     st.subheader("Feature")
     st.write("Feature presentation")
     st.write("Feature presentation")
+    st.write("Feature presentation")
+
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.write('')
+    st.subheader("Feature")
+    st.write("Feature presentation")
+    st.write("Feature presentation")
+    st.write("Feature presentation")
+
+with col2:
+    picture_1 = Image.open('blog-Pitchero_2-768x384-modified.png')
+    st.image(picture_1)
