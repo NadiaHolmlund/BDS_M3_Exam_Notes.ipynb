@@ -94,17 +94,17 @@ if position == 'Goalkeeper':
 
     # Setting up the sidebar
     col1, col2 = st.sidebar.columns(2)
-    feature_0 = col1.number_input('Feature 1')
-    feature_2 = col1.number_input((GK_fs.iloc[2].values[0]), key=2, min_value=0, step=10)
-    feature_4 = col1.number_input((GK_fs.iloc[4].values[0]), key=4, min_value=0, step=10)
-    feature_6 = col1.number_input((GK_fs.iloc[6].values[0]), key=6, min_value=0, step=10)
-    feature_8 = col1.number_input((GK_fs.iloc[8].values[0]), key=8, min_value=0, step=10)
+    feature_0 = col1.number_input('Feature 0')
+    feature_2 = col1.number_input('Feature 2')
+    feature_4 = col1.number_input('Feature 4')
+    feature_6 = col1.number_input('Feature 6')
+    feature_8 = col1.number_input('Feature 8')
     
-    feature_1 = col2.number_input((GK_fs.iloc[1].values[0]), key=1, min_value=0, step=10)
-    feature_3 = col2.number_input((GK_fs.iloc[3].values[0]), key=3, min_value=0, step=10)
-    feature_5 = col2.number_input((GK_fs.iloc[5].values[0]), key=5, min_value=0, step=10)
-    feature_7 = col2.number_input((GK_fs.iloc[7].values[0]), key=7, min_value=0, step=10)
-    feature_9 = col2.number_input((GK_fs.iloc[9].values[0]), key=9, min_value=0, step=10)
+    feature_1 = col2.number_input('Feature 1')
+    feature_3 = col2.number_input('Feature 3')
+    feature_5 = col2.number_input('Feature 5')
+    feature_7 = col2.number_input('Feature 7')
+    feature_9 = col2.number_input('Feature 9')
 
     compare_BL = st.sidebar.checkbox('Compare ' + player + ' to the highest rated ' + position + ' in the Bundesliga')
 
