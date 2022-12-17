@@ -26,8 +26,8 @@ with col1:
 
 with col2:
     st.write('')
-    st.subheader("Feature")
-    st.write("Feature presentation")
+    st.subheader("Feature Presentation")
+    st.write("Feature presentation Feature presentation Feature presentation")
     st.write("Feature presentation")
     st.write("Feature presentation")
 
@@ -36,7 +36,7 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.write('')
-    st.subheader("Feature")
+    st.subheader("Feature Presentation")
     st.write("Feature presentation")
     st.write("Feature presentation")
     st.write("Feature presentation")
