@@ -94,7 +94,7 @@ if position == 'Goalkeeper':
 
     # Setting up the sidebar
     col1, col2 = st.sidebar.columns(2)
-    feature_0 = col1.number_input((GK_fs.iloc[0].values[0]), key=0, min_value=0, step=10)
+    feature_0 = col1.number_input('Feature 1')
     feature_2 = col1.number_input((GK_fs.iloc[2].values[0]), key=2, min_value=0, step=10)
     feature_4 = col1.number_input((GK_fs.iloc[4].values[0]), key=4, min_value=0, step=10)
     feature_6 = col1.number_input((GK_fs.iloc[6].values[0]), key=6, min_value=0, step=10)
