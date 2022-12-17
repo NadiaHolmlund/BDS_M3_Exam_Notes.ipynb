@@ -75,6 +75,6 @@ with col2:
     st.write("Feature presentation Feature presentation")
 
 with st.expander("Demo"):
-    video_file = open('/work/M3/Images/Screen Recording 2022-12-04 at 18.26.48.mov', 'rb')
-    video_bytes = video_file.read()
-    st.video(video_bytes)
+    video_file_1 = open('/work/M3/Images/Screen Recording 2022-12-04 at 18.26.48.mov', 'rb')
+    video_bytes_1 = video_file_1.read()
+    st.video(video_bytes_1)
