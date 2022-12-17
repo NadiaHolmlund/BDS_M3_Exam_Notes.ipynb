@@ -75,4 +75,4 @@ with col2:
     st.write("Feature presentation Feature presentation")
 
     with st.expander("See explanation"):
-        st.write('The chart above shows some numbers I picked for you.)
+        st.write('The chart above shows some numbers I picked for you.')
