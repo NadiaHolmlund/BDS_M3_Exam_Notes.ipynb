@@ -74,5 +74,7 @@ with col2:
     st.write("Feature presentation Feature presentation")
     st.write("Feature presentation Feature presentation")
 
-    with st.expander("See explanation"):
-        st.write('The chart above shows some numbers I picked for you.')
+with st.expander("Demo"):
+    video_file = open('/work/M3/Images/Screen Recording 2022-12-04 at 18.26.48.mov', 'rb')
+    video_bytes = video_file.read()
+    st.video(video_bytes)
