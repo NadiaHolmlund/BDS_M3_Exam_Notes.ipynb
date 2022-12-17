@@ -28,6 +28,9 @@ st.markdown(
 
 
 # Setting up the default sidebar
+with st.sidebar
+    with st.expander('Hello)
+
 with st.sidebar.expander('Player Information'):
     player = st.sidebar.text_input((''),('Player'))
     col1, col2 = st.sidebar.columns(2)
