@@ -26,26 +26,6 @@ st.markdown(
 
 
 
-# Loading data, models, scalers, explainers, etc., only once
-@st.experimental_singleton
-def read_objects():
-    BL = pd.read_csv('/work/M3/Pickles/0_Data/BL.csv')
-
-    # Model, scaler, explainer and features selected for each position
-    GK_model = pickle.load(open('/work/M3/Pickles/1_GK/GK_model.pkl','rb'))
-    GK_scaler = pickle.load(open('/work/M3/Pickles/1_GK/GK_scaler.pkl','rb'))
-    GK_shap_values = pickle.load(open('/work/M3/Pickles/1_GK/GK_shap.pkl','rb'))
-    GK_rmse  = pickle.load(open('/work/M3/Pickles/1_GK/GK_rmse.pkl','rb'))
-    GK_explainer = shap.TreeExplainer(GK_model)
-    GK_fs = pd.read_csv('/work/M3/Pickles/1_GK/GK_fs.csv')
-
-    return BL, GK_model, GK_scaler, GK_shap_values, GK_rmse, GK_explainer, GK_fs
-
-BL, GK_model, GK_scaler, GK_shap_values, GK_rmse, GK_explainer, GK_fs = read_objects()
-
-
-
-
 
 # Setting up the default sidebar
 player = st.sidebar.text_input((''),('Player'))
