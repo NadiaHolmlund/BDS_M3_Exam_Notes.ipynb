@@ -173,9 +173,9 @@ if position == 'Goalkeeper':
     col2.write('')
 
     # Adding a button that triggers prediction of the rating
-    if st.sidebar.button('Predict Player Rating'):
-        st.sidebar.write('')
-        st.sidebar.write('')
+    if st.button('Predict Player Rating'):
+        st.write('')
+        st.write('')
         # Creating a dataframe with feature names and user input from the sidebar
         user_input = pd.DataFrame({ GK_fs.iloc[0].values[0]:feature_0,
                                     GK_fs.iloc[1].values[0]:feature_1, 
