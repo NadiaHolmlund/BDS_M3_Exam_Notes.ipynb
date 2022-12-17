@@ -22,7 +22,7 @@ from PIL import Image
 col1, col2 = st.columns(2)
 
 with col1:
-    picture_1 = Image.open('NadiaHolmlund/BDS_M3_Exam_Notes.ipynb/blog-Pitchero_2-768x384-modified.png')
+    picture_1 = Image.open('blog-Pitchero_2-768x384-modified.png')
     st.image(picture_1)
 
 with col2:
@@ -32,7 +32,7 @@ with col2:
     st.write("Feature presentation")
     demo_1 = st.button('Demo', key='demo_1')
 if demo_1:
-        video_file = open('NadiaHolmlund/BDS_M3_Exam_Notes.ipynb/Screen_Recording_2022-12-04_at_18.26.48.mov', 'rb')
+        video_file = open('Screen_Recording_2022-12-04_at_18.26.48.mov', 'rb')
         video_bytes = video_file.read()
         st.video(video_bytes)
         close_demo_1 = st.button('Close Demo', key='close_demo_1')
