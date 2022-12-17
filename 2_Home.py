@@ -50,7 +50,7 @@ with col2:
 
 
 
-    col1, col2 = st.columns(2)
+col1, col2 = st.columns(2)
 
 with col1:
     picture_1 = Image.open('blog-Pitchero_2-768x384-modified.png')
