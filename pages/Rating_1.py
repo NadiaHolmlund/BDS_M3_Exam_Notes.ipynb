@@ -95,20 +95,22 @@ if position == 'Position':
 if position == 'Goalkeeper':
 
     # Setting up the sidebar
-    col1, col2 = st.sidebar.columns(2)
-    feature_0 = col1.number_input('Feature 0')
-    feature_2 = col1.number_input('Feature 2')
-    feature_4 = col1.number_input('Feature 4')
-    feature_6 = col1.number_input('Feature 6')
-    feature_8 = col1.number_input('Feature 8')
-    
-    feature_1 = col2.number_input('Feature 1')
-    feature_3 = col2.number_input('Feature 3')
-    feature_5 = col2.number_input('Feature 5')
-    feature_7 = col2.number_input('Feature 7')
-    feature_9 = col2.number_input('Feature 9')
+    with st.sidebar:
+        with st.expander('Input Player Performance')
+            col1, col2 = st.columns(2)
+            feature_0 = col1.number_input('Feature 0')
+            feature_2 = col1.number_input('Feature 2')
+            feature_4 = col1.number_input('Feature 4')
+            feature_6 = col1.number_input('Feature 6')
+            feature_8 = col1.number_input('Feature 8')
+            
+            feature_1 = col2.number_input('Feature 1')
+            feature_3 = col2.number_input('Feature 3')
+            feature_5 = col2.number_input('Feature 5')
+            feature_7 = col2.number_input('Feature 7')
+            feature_9 = col2.number_input('Feature 9')
 
-    compare_BL = st.sidebar.checkbox('Compare ' + player + ' to the highest rated ' + position + ' in the Bundesliga')
+            compare_BL = st.checkbox('Compare ' + player + ' to the highest rated ' + position + ' in the Bundesliga')
 
     # Setting up the page
     col1, col2 = st.columns([2, 3])
