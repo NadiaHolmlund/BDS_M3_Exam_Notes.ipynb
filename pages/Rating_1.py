@@ -110,7 +110,10 @@ if position == 'Goalkeeper':
             feature_7 = col2.number_input('Feature 7')
             feature_9 = col2.number_input('Feature 9')
 
+            predict_rating = st.button('Predict Player Rating')
+
             compare_BL = st.checkbox('Compare ' + player + ' to the highest rated ' + position + ' in the Bundesliga')
+
 
     # Setting up the page
     col1, col2 = st.columns([2, 3])
@@ -173,7 +176,8 @@ if position == 'Goalkeeper':
     col2.write('')
 
     # Adding a button that triggers prediction of the rating
-    if st.button('Predict Player Rating'):
+
+    if predict_rating = 'Predict Player Rating':
         st.write('')
         st.write('')
         # Creating a dataframe with feature names and user input from the sidebar
