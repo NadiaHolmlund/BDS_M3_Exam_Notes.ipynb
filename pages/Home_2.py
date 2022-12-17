@@ -19,6 +19,26 @@ st.write('')
 
 from PIL import Image
 
+
+
+
+col1, col2 = st.columns(2)
+
+with col1:
+    video_file = open('Screen_Recording_2022-12-04_at_18.26.48.mov', 'rb')
+    video_bytes = video_file.read()
+    st.video(video_bytes)
+
+with col2:
+    st.write('')
+    st.subheader("Feature Presentation")
+    st.write("Feature presentation Feature presentation")
+    st.write("Feature presentation Feature presentation")
+    st.write("Feature presentation Feature presentation")
+
+
+
+
 col1, col2 = st.columns(2)
 
 with col1:
@@ -27,40 +47,14 @@ with col1:
 
 with col2:
     st.write('')
-    st.subheader("Player Rating")
-    st.write("Feature presentation")
-    st.write("Feature presentation")
+    st.subheader("Feature Presentation")
+    st.write("Feature presentation Feature presentation")
+    st.write("Feature presentation Feature presentation")
     demo_1 = st.button('Demo', key='demo_1')
 if demo_1:
-        video_file = open('Screen_Recording_2022-12-04_at_18.26.48.mov', 'rb')
+        video_file = open('/work/M3/Images/Screen Recording 2022-12-04 at 18.26.48.mov', 'rb')
         video_bytes = video_file.read()
         st.video(video_bytes)
-        close_demo_1 = st.button('Close Demo', key='close_demo_1')
-
-
-
-
-
-
-
-
-col1, col2 = st.columns(2)
-
-with col1:
-    picture_1 = Image.open('blog-Pitchero_2-768x384-modified.png')
-    st.image(picture_1)
-
-with col2:
-    st.write('')
-    st.subheader("Feature Presentation")
-    st.write("Feature presentation Feature presentation")
-    st.write("Feature presentation Feature presentation")
-    st.write("Feature presentation Feature presentation")
-
-
-
-
-
 
 
 
@@ -79,3 +73,8 @@ with col2:
     st.write("Feature presentation Feature presentation")
     st.write("Feature presentation Feature presentation")
     st.write("Feature presentation Feature presentation")
+
+    with st.expander('Demo'):
+        video_file = open('/work/M3/Images/Screen Recording 2022-12-04 at 18.26.48.mov', 'rb')
+        video_bytes = video_file.read()
+        st.video(video_bytes)
