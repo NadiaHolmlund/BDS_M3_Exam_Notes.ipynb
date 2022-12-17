@@ -16,11 +16,12 @@ st.set_page_config(
 st.markdown("<h1 style='text-align: center; color: grey;'>Intelligent Scouting & Player Rating</h1>", unsafe_allow_html=True)
 st.write('')
 
+from PIL import Image
 
 col1, col2 = st.columns(2)
 
 with col1:
-    picture_1 = Image.open('NadiaHolmlund/BDS_M3_Exam_Notes.ipynb/blog-Pitchero_2-768x384-modified.png')
+    picture_1 = Image.open('blog-Pitchero_2-768x384-modified.png')
     st.image(picture_1)
 
 with col2:
