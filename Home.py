@@ -28,8 +28,8 @@ with col2:
     st.write('')
     st.subheader("Feature Presentation")
     st.write("Feature presentation Feature presentation Feature presentation")
-    st.write("Feature presentation")
-    st.write("Feature presentation")
+    st.write("Feature presentation Feature presentation Feature presentation")
+    st.write("Feature presentation Feature presentation Feature presentation")
 
 
 col1, col2 = st.columns(2)
@@ -37,10 +37,26 @@ col1, col2 = st.columns(2)
 with col1:
     st.write('')
     st.subheader("Feature Presentation")
-    st.write("Feature presentation")
-    st.write("Feature presentation")
-    st.write("Feature presentation")
+    st.write("Feature presentation Feature presentation Feature presentation")
+    st.write("Feature presentation Feature presentation Feature presentation")
+    st.write("Feature presentation Feature presentation Feature presentation")
 
 with col2:
     picture_1 = Image.open('blog-Pitchero_2-768x384-modified.png')
     st.image(picture_1)
+
+
+
+
+col1, col2 = st.columns(2)
+
+with col1:
+    picture_1 = Image.open('blog-Pitchero_2-768x384-modified.png')
+    st.image(picture_1)
+
+with col2:
+    st.write('')
+    st.subheader("Feature Presentation")
+    st.write("Feature presentation Feature presentation Feature presentation")
+    st.write("Feature presentation Feature presentation Feature presentation")
+    st.write("Feature presentation Feature presentation Feature presentation")
