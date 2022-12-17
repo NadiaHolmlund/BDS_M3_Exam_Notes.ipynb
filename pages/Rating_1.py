@@ -131,7 +131,7 @@ if position == 'Goalkeeper':
     col2.write('')
     col2.write('')
     categories = ['Feature 0', 'Feature 1', 'Feature 2','Feature 3','Feature 4','Feature 5','Feature 6','Feature 7','Feature 8', 'Feature 9']
-    fig.add_trace(go.Scatterpolar(r=[50, 50, 50, 50, 50, 50, 50, 50, 50, 50]],theta=categories, fill='toself', name=player))
+    fig.add_trace(go.Scatterpolar(r=[50, 50, 50, 50, 50, 50, 50, 50, 50, 50],theta=categories, fill='toself', name=player))
 
     if compare_BL:
         feature_0_BL = BL[GK_fs.iloc[0].values[0]].loc[(BL['Position'] == 'GK') & (BL['Rating'] == BL['Rating'].max())].values[0]
