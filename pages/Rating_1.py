@@ -172,46 +172,46 @@ if position == 'Goalkeeper':
     else: col1.info('Nationality:  ' + nationality)
     col2.write('')
 
-    # Adding a button that triggers prediction of the rating
-    if st.button('Predict Player Rating'):
-        st.write('')
-        st.write('')
-        # Creating a dataframe with feature names and user input from the sidebar
-        user_input = pd.DataFrame({ GK_fs.iloc[0].values[0]:feature_0,
-                                    GK_fs.iloc[1].values[0]:feature_1, 
-                                    GK_fs.iloc[2].values[0]:feature_2, 
-                                    GK_fs.iloc[3].values[0]:feature_3, 
-                                    GK_fs.iloc[4].values[0]:feature_4, 
-                                    GK_fs.iloc[5].values[0]:feature_5,
-                                    GK_fs.iloc[6].values[0]:feature_6,                                         
-                                    GK_fs.iloc[7].values[0]:feature_7, 
-                                    GK_fs.iloc[8].values[0]:feature_8, 
-                                    GK_fs.iloc[9].values[0]:feature_9, 
-                                    }, index=[0]) 
-        # Scaling the user input
-        user_input_scaled = pd.DataFrame(GK_scaler.transform(user_input), columns = user_input.columns, index=[0])  
-
-        # Predicting the rating based on the user input
-        predicted_rating = GK_model.predict(user_input_scaled)
-    
-        # Displaying the rating and RMSE
-        col3.metric(label="Player Rating", value=np.round(predicted_rating, decimals = 2))
-        col4.write('')
-        col5.metric(label="Mean Error", value=np.round(GK_rmse, decimals = 2))
-        col6.write('')
-
-        # Displaying the SHAP values
-        with st.expander("Player Rating Explained"):
-            shap_value = GK_explainer.shap_values(user_input_scaled)
-            st_shap(shap.force_plot(GK_explainer.expected_value, shap_value, user_input_scaled), height=150, width=700)
-    
-    # Default display when the button has not been pressed
-    else:
-        st.sidebar.write('')
-        st.sidebar.write('')
-        col3.metric(label="Player Rating", value='00.0')
-        col4.write('')
-        col5.metric(label="Mean Error", value='00.0')
-        col6.write('')
-        with st.expander("Player Rating Explained"):
+        # Adding a button that triggers prediction of the rating
+        if st.button('Predict Player Rating'):
             st.write('')
+            st.write('')
+            # Creating a dataframe with feature names and user input from the sidebar
+            user_input = pd.DataFrame({ GK_fs.iloc[0].values[0]:feature_0,
+                                        GK_fs.iloc[1].values[0]:feature_1, 
+                                        GK_fs.iloc[2].values[0]:feature_2, 
+                                        GK_fs.iloc[3].values[0]:feature_3, 
+                                        GK_fs.iloc[4].values[0]:feature_4, 
+                                        GK_fs.iloc[5].values[0]:feature_5,
+                                        GK_fs.iloc[6].values[0]:feature_6,                                         
+                                        GK_fs.iloc[7].values[0]:feature_7, 
+                                        GK_fs.iloc[8].values[0]:feature_8, 
+                                        GK_fs.iloc[9].values[0]:feature_9, 
+                                        }, index=[0]) 
+            # Scaling the user input
+            user_input_scaled = pd.DataFrame(GK_scaler.transform(user_input), columns = user_input.columns, index=[0])  
+
+            # Predicting the rating based on the user input
+            predicted_rating = GK_model.predict(user_input_scaled)
+        
+            # Displaying the rating and RMSE
+            col3.metric(label="Player Rating", value=np.round(predicted_rating, decimals = 2))
+            col4.write('')
+            col5.metric(label="Mean Error", value=np.round(GK_rmse, decimals = 2))
+            col6.write('')
+
+            # Displaying the SHAP values
+            with st.expander("Player Rating Explained"):
+                shap_value = GK_explainer.shap_values(user_input_scaled)
+                st_shap(shap.force_plot(GK_explainer.expected_value, shap_value, user_input_scaled), height=150, width=700)
+        
+        # Default display when the button has not been pressed
+        else:
+            st.sidebar.write('')
+            st.sidebar.write('')
+            col3.metric(label="Player Rating", value='00.0')
+            col4.write('')
+            col5.metric(label="Mean Error", value='00.0')
+            col6.write('')
+            with st.expander("Player Rating Explained"):
+                st.write('')
