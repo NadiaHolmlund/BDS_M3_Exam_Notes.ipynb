@@ -21,7 +21,7 @@ from PIL import Image
 col1, col2 = st.columns(2)
 
 with col1:
-    video_file = open('/work/M3/Images/Screen Recording 2022-12-04 at 18.26.48.mov', 'rb')
+    video_file = open('NadiaHolmlund/BDS_M3_Exam_Notes.ipynb/Screen_Recording_2022-12-04_at_18.26.48.mov', 'rb')
     video_bytes = video_file.read()
     st.video(video_bytes)
 
