@@ -21,6 +21,40 @@ from PIL import Image
 col1, col2 = st.columns(2)
 
 with col1:
+    video_1 = Video.open('NadiaHolmlund/BDS_M3_Exam_Notes.ipynb/Screen_Recording_2022-12-04_at_18.26.48.mov')
+    st.image(picture_1)
+
+with col2:
+    st.write('')
+    st.subheader("Feature Presentation")
+    st.write("Feature presentation Feature presentation")
+    st.write("Feature presentation Feature presentation")
+    st.write("Feature presentation Feature presentation")
+
+
+
+
+
+col1, col2 = st.columns(2)
+
+with col1:
+    picture_1 = Image.open('blog-Pitchero_2-768x384-modified.png')
+    st.image(picture_1)
+
+with col2:
+    st.write('')
+    st.subheader("Feature Presentation")
+    st.write("Feature presentation Feature presentation")
+    st.write("Feature presentation Feature presentation")
+    st.write("Feature presentation Feature presentation")
+
+
+
+
+
+col1, col2 = st.columns(2)
+
+with col1:
     picture_1 = Image.open('blog-Pitchero_2-768x384-modified.png')
     st.image(picture_1)
 
