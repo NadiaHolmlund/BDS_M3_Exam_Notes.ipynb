@@ -177,7 +177,7 @@ if position == 'Goalkeeper':
 
     # Adding a button that triggers prediction of the rating
 
-    if predict_rating = 'Predict Player Rating':
+    if predict_rating == 'Predict Player Rating':
         st.write('')
         st.write('')
         # Creating a dataframe with feature names and user input from the sidebar
