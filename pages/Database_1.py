@@ -10,13 +10,6 @@ st.set_page_config(
     page_icon="📂",
     layout="wide")
 
-# Loading data only once
-@st.experimental_singleton
-def read_objects():
-    database = pd.read_csv('/work/M3/Pickles/0_Data/database.csv')
-    return database
-
-database = read_objects()
 
 
 
