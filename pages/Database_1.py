@@ -16,4 +16,4 @@ st.set_page_config(
 with st.sidebar:
     st.radio('League', ('Bundesliga', 'Superliga'))
     st.radio('Year', ('2018', '2019', '2020', '2021', '2022'))
-    st.selectbox('Player', 'Player')
+    st.selectbox('Player', ('Select Player'))
