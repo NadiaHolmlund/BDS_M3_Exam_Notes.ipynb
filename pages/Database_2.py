@@ -236,11 +236,12 @@ if position == 'Goalkeeper':
  
 
 # Setting up the rest of the page
-col1, col2, col3, col4, col5, col6 = st.columns([0.9, 0.9, 0.9, 0.9, 0.9, 1.5])
+col1, col2, col3, col4, col5, col6, col7, col8 = st.columns([1, 1, 1, 1, 1, 1, 1, 1])
 col1.metric(label="Matches Played", value='00.0', delta= 'avg. ', delta_color='off')
-
-col2.metric(label="Minutes Played", value='00.0', delta='avg. ', delta_color='off')
-
-col3.metric(label="Yellow Cards", value='00.0', delta='avg. ', delta_color='off')
-
-col4.metric(label="Red Cards", value='00.0', delta='avg. ', delta_color='off')
+col2.write('')
+col3.metric(label="Minutes Played", value='00.0', delta='avg. ', delta_color='off')
+col4.write('')
+col5.metric(label="Yellow Cards", value='00.0', delta='avg. ', delta_color='off')
+col6.write('')
+col7.metric(label="Red Cards", value='00.0', delta='avg. ', delta_color='off')
+col8.write('')
