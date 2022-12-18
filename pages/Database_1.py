@@ -13,3 +13,5 @@ st.set_page_config(
 
 
 
+with st.sidebar:
+    st.radio('League', 'Bundesliga')
