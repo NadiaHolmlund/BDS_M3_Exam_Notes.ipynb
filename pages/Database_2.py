@@ -220,11 +220,6 @@ if position == 'Goalkeeper':
         col5.metric(label="Mean Error", value=np.round(GK_rmse, decimals = 2))
         col6.write('')
 
-        # Displaying the SHAP values
-        with st.expander("Player Rating Explained"):
-            shap_value = GK_explainer.shap_values(user_input_scaled)
-            st_shap(shap.force_plot(GK_explainer.expected_value, shap_value, user_input_scaled), height=150, width=700)
-    
     # Default display when the button has not been pressed
     else:
         st.sidebar.write('')
@@ -236,7 +231,7 @@ if position == 'Goalkeeper':
  
 
 # Setting up the rest of the page
-col1, col2, col3, col4, col5, col6, col7, col8 = st.columns([1, 1, 1, 1, 1, 1, 1, 1])
+col1, col2, col3, col4, col5, col6, col7, col8 = st.columns([1, 2, 0.5, 1, 1, 1, 1, 1])
 col1.metric(label="Matches Played", value='00.0', delta= 'avg. ', delta_color='off')
 col2.write('')
 col3.metric(label="Minutes Played", value='00.0', delta='avg. ', delta_color='off')
