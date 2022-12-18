@@ -2,7 +2,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import shap
 from streamlit_shap import st_shap
 import pickle
@@ -18,43 +18,45 @@ st.set_page_config(
 
 # Expanding the width of the sidebar (to fit feature names in one line in the sidebar)
 st.markdown(
-"""<style>[data-testid="stSidebar"][aria-expanded="true"] > div:first-child {width: 450px;}
-[data-testid="stSidebar"][aria-expanded="false"] > div:first-child {width: 450px;}
+"""<style>[data-testid="stSidebar"][aria-expanded="true"] > div:first-child {width: 400px;}
+[data-testid="stSidebar"][aria-expanded="false"] > div:first-child {width: 400px;}
 </style>""",unsafe_allow_html=True)
 
-# Loading data, models, scalers, explainers, etc., only once
-@st.experimental_singleton
-def read_objects():
-    BL = pd.read_csv('/work/M3/Pickles/0_Data/BL.csv')
 
-    # Model, scaler, explainer and features selected for each position
-    GK_model = pickle.load(open('/work/M3/Pickles/1_GK/GK_model.pkl','rb'))
-    GK_scaler = pickle.load(open('/work/M3/Pickles/1_GK/GK_scaler.pkl','rb'))
-    GK_shap_values = pickle.load(open('/work/M3/Pickles/1_GK/GK_shap.pkl','rb'))
-    GK_rmse  = pickle.load(open('/work/M3/Pickles/1_GK/GK_rmse.pkl','rb'))
-    GK_explainer = shap.TreeExplainer(GK_model)
-    GK_fs = pd.read_csv('/work/M3/Pickles/1_GK/GK_fs.csv')
 
-    return BL, GK_model, GK_scaler, GK_shap_values, GK_rmse, GK_explainer, GK_fs
-
-BL, GK_model, GK_scaler, GK_shap_values, GK_rmse, GK_explainer, GK_fs = read_objects()
 
 
 
 # Setting up the default sidebar
 with st.sidebar:
-    with st.expander('Expand to fill in player information'):
+        player = st.text_input((''),('Player'))
         col1, col2 = st.columns(2)
-        player = col1.text_input((''),('Player'))
         team = col1.text_input((''),('Team'))
         age = col1.text_input((''),('Age'))
         weight = col1.text_input((''),('Weight'))
-
-        position = col2.selectbox((''),('Position', 'Goalkeeper', 'Central Defender', 'Full Back', 'Defensive Midfielder', 'Central Midfielder', 'Attacking Midfielder', 'Winger Midfielder', 'Forwarder'))
         foot = col2.selectbox((''),('Foot', 'Right', 'Left', 'Both', 'Unknown'))
         height = col2.text_input((''),('Height'))
         nationality = col2.text_input((''),('Nationality'))
+        position = st.selectbox((''),('Position', 'Goalkeeper', 'Central Defender', 'Full Back', 'Defensive Midfielder', 'Central Midfielder', 'Attacking Midfielder', 'Winger Midfielder', 'Forwarder'))
 
+    # Setting up the sidebar
+with st.sidebar:
+        col1, col2 = st.columns(2)
+        feature_0 = col1.number_input('Feature 0')
+        feature_2 = col1.number_input('Feature 2')
+        feature_4 = col1.number_input('Feature 4')
+        feature_6 = col1.number_input('Feature 6')
+        feature_8 = col1.number_input('Feature 8')
+            
+        feature_1 = col2.number_input('Feature 1')
+        feature_3 = col2.number_input('Feature 3')
+        feature_5 = col2.number_input('Feature 5')
+        feature_7 = col2.number_input('Feature 7')
+        feature_9 = col2.number_input('Feature 9')
+
+        predict_rating = st.button('Predict Player Rating')
+
+        compare_BL = st.checkbox('Compare ' + player + ' to the highest rated ' + position + ' in the Bundesliga')
 
 
 # Setting up the default page
@@ -83,7 +85,7 @@ if position == 'Position':
     col2.write('')
     col2.write('')
     categories = ['Feature 0', 'Feature 1', 'Feature 2','Feature 3','Feature 4','Feature 5','Feature 6','Feature 7','Feature 8', 'Feature 9']
-    fig.add_trace(go.Scatterpolar(r=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], theta=categories, fill='toself', name=player))
+    fig.add_trace(go.Scatterpolar(r=[50, 50, 50, 50, 50, 50, 50, 50, 50, 50], theta=categories, fill='toself', name=player))
     col2.plotly_chart(fig, use_container_width=True)
 
     # Setting up the rest of the default page
@@ -94,7 +96,7 @@ if position == 'Position':
     else: col1.info('Nationality:  ' + nationality)
 
     # Setting up the rest of the default page
-    col3.metric(label="Player Rating", value='00')
+    col3.metric(label="Player Rating", value='00.0')
     col4.write('')
     col5.metric(label="Mean Error", value='00.0')
     col6.write('')
@@ -103,28 +105,30 @@ if position == 'Position':
 
 
 
+
+
 # Setting up the page for position GK
 if position == 'Goalkeeper':
 
     # Setting up the sidebar
     with st.sidebar:
-        with st.expander('Expand to fill in player performance'):
             col1, col2 = st.columns(2)
-            feature_0 = col1.number_input((GK_fs.iloc[0].values[0]), key=0, min_value=0, step=10)
-            feature_2 = col1.number_input((GK_fs.iloc[2].values[0]), key=2, min_value=0, step=10)
-            feature_4 = col1.number_input((GK_fs.iloc[4].values[0]), key=4, min_value=0, step=10)
-            feature_6 = col1.number_input((GK_fs.iloc[6].values[0]), key=6, min_value=0, step=10)
-            feature_8 = col1.number_input((GK_fs.iloc[8].values[0]), key=8, min_value=0, step=10)
+            feature_0 = col1.number_input('Feature 0')
+            feature_2 = col1.number_input('Feature 2')
+            feature_4 = col1.number_input('Feature 4')
+            feature_6 = col1.number_input('Feature 6')
+            feature_8 = col1.number_input('Feature 8')
             
-            feature_1 = col2.number_input((GK_fs.iloc[1].values[0]), key=1, min_value=0, step=10)
-            feature_3 = col2.number_input((GK_fs.iloc[3].values[0]), key=3, min_value=0, step=10)
-            feature_5 = col2.number_input((GK_fs.iloc[5].values[0]), key=5, min_value=0, step=10)
-            feature_7 = col2.number_input((GK_fs.iloc[7].values[0]), key=7, min_value=0, step=10)
-            feature_9 = col2.number_input((GK_fs.iloc[9].values[0]), key=9, min_value=0, step=10)
-            
-            # Adding a button that triggers prediction of the rating
-            predict_button = st.button('Predict Player Rating')
+            feature_1 = col2.number_input('Feature 1')
+            feature_3 = col2.number_input('Feature 3')
+            feature_5 = col2.number_input('Feature 5')
+            feature_7 = col2.number_input('Feature 7')
+            feature_9 = col2.number_input('Feature 9')
+
+            predict_rating = st.button('Predict Player Rating')
+
             compare_BL = st.checkbox('Compare ' + player + ' to the highest rated ' + position + ' in the Bundesliga')
+
 
     # Setting up the page
     col1, col2 = st.columns([2, 3])
@@ -148,27 +152,8 @@ if position == 'Goalkeeper':
     # Setting up the radar graph
     col2.write('')
     col2.write('')
-    categories =    [GK_fs.iloc[0],
-                    GK_fs.iloc[1],
-                    GK_fs.iloc[2],
-                    GK_fs.iloc[3],
-                    GK_fs.iloc[4],
-                    GK_fs.iloc[5],
-                    GK_fs.iloc[6],
-                    GK_fs.iloc[7],
-                    GK_fs.iloc[8],
-                    GK_fs.iloc[9]]
-    fig.add_trace(go.Scatterpolar(r=    [(feature_0 - 0) / (BL[GK_fs.iloc[0].values[0]].max() - 0) * 100,
-                                        (feature_1 - 0) / (BL[GK_fs.iloc[1].values[0]].max() - 0) * 100,
-                                        (feature_2 - 0) / (BL[GK_fs.iloc[2].values[0]].max() - 0) * 100,
-                                        (feature_3 - 0) / (BL[GK_fs.iloc[3].values[0]].max() - 0) * 100,
-                                        (feature_4 - 0) / (BL[GK_fs.iloc[4].values[0]].max() - 0) * 100,
-                                        (feature_5 - 0) / (BL[GK_fs.iloc[5].values[0]].max() - 0) * 100,
-                                        (feature_6 - 0) / (BL[GK_fs.iloc[6].values[0]].max() - 0) * 100,
-                                        (feature_7 - 0) / (BL[GK_fs.iloc[7].values[0]].max() - 0) * 100,
-                                        (feature_8 - 0) / (BL[GK_fs.iloc[8].values[0]].max() - 0) * 100,
-                                        (feature_9 - 0) / (BL[GK_fs.iloc[9].values[0]].max() - 0) * 100
-                                        ],theta=categories, fill='toself', name=player))
+    categories = ['Feature 0', 'Feature 1', 'Feature 2','Feature 3','Feature 4','Feature 5','Feature 6','Feature 7','Feature 8', 'Feature 9']
+    fig.add_trace(go.Scatterpolar(r=[50, 50, 50, 50, 50, 50, 50, 50, 50, 50],theta=categories, fill='toself', name=player))
 
     if compare_BL:
         feature_0_BL = BL[GK_fs.iloc[0].values[0]].loc[(BL['Position'] == 'GK') & (BL['Rating'] == BL['Rating'].max())].values[0]
@@ -205,9 +190,11 @@ if position == 'Goalkeeper':
     else: col1.info('Nationality:  ' + nationality)
     col2.write('')
 
-    # Creating an if statement that triggers the prediction when pressing the predict_button
-    if predict_button:
+    # Adding a button that triggers prediction of the rating
 
+    if predict_rating == 'Predict Player Rating':
+        st.write('')
+        st.write('')
         # Creating a dataframe with feature names and user input from the sidebar
         user_input = pd.DataFrame({ GK_fs.iloc[0].values[0]:feature_0,
                                     GK_fs.iloc[1].values[0]:feature_1, 
@@ -227,7 +214,7 @@ if position == 'Goalkeeper':
         predicted_rating = GK_model.predict(user_input_scaled)
     
         # Displaying the rating and RMSE
-        col3.metric(label="Player Rating", value=int(predicted_rating))
+        col3.metric(label="Player Rating", value=np.round(predicted_rating, decimals = 2))
         col4.write('')
         col5.metric(label="Mean Error", value=np.round(GK_rmse, decimals = 2))
         col6.write('')
@@ -239,7 +226,9 @@ if position == 'Goalkeeper':
     
     # Default display when the button has not been pressed
     else:
-        col3.metric(label="Player Rating", value='00')
+        st.sidebar.write('')
+        st.sidebar.write('')
+        col3.metric(label="Player Rating", value='00.0')
         col4.write('')
         col5.metric(label="Mean Error", value='00.0')
         col6.write('')
