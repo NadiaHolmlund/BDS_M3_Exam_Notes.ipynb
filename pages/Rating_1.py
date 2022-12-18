@@ -40,23 +40,23 @@ with st.sidebar:
         position = st.selectbox((''),('Position', 'Goalkeeper', 'Central Defender', 'Full Back', 'Defensive Midfielder', 'Central Midfielder', 'Attacking Midfielder', 'Winger Midfielder', 'Forwarder'))
 
     # Setting up the sidebar
-    with st.sidebar:
-            col1, col2 = st.columns(2)
-            feature_0 = col1.number_input('Feature 0')
-            feature_2 = col1.number_input('Feature 2')
-            feature_4 = col1.number_input('Feature 4')
-            feature_6 = col1.number_input('Feature 6')
-            feature_8 = col1.number_input('Feature 8')
+with st.sidebar:
+        col1, col2 = st.columns(2)
+        feature_0 = col1.number_input('Feature 0')
+        feature_2 = col1.number_input('Feature 2')
+        feature_4 = col1.number_input('Feature 4')
+        feature_6 = col1.number_input('Feature 6')
+        feature_8 = col1.number_input('Feature 8')
             
-            feature_1 = col2.number_input('Feature 1')
-            feature_3 = col2.number_input('Feature 3')
-            feature_5 = col2.number_input('Feature 5')
-            feature_7 = col2.number_input('Feature 7')
-            feature_9 = col2.number_input('Feature 9')
+        feature_1 = col2.number_input('Feature 1')
+        feature_3 = col2.number_input('Feature 3')
+        feature_5 = col2.number_input('Feature 5')
+        feature_7 = col2.number_input('Feature 7')
+        feature_9 = col2.number_input('Feature 9')
 
-            predict_rating = st.button('Predict Player Rating')
+        predict_rating = st.button('Predict Player Rating')
 
-            compare_BL = st.checkbox('Compare ' + player + ' to the highest rated ' + position + ' in the Bundesliga')
+        compare_BL = st.checkbox('Compare ' + player + ' to the highest rated ' + position + ' in the Bundesliga')
 
 
 # Setting up the default page
