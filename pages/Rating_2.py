@@ -41,17 +41,12 @@ with st.sidebar:
 
     # Setting up the sidebar
 with st.sidebar:
-        feature_0 = st.number_input('Feature 0')
-        feature_2 = st.number_input('Feature 2')
-        feature_4 = st.number_input('Feature 4')
-        feature_6 = st.number_input('Feature 6')
-        feature_8 = st.number_input('Feature 8')
-            
-        feature_1 = st.number_input('Feature 1')
-        feature_3 = st.number_input('Feature 3')
-        feature_5 = st.number_input('Feature 5')
-        feature_7 = st.number_input('Feature 7')
-        feature_9 = st.number_input('Feature 9')
+        feature_0 = st.text_input('Feature 0')
+        feature_1 = st.text_input('Feature 1')
+        feature_2 = st.text_input('Feature 2')
+        feature_3 = st.text_input('Feature 3')
+        feature_4 = st.text_input('Feature 4')
+
 
         predict_rating = st.button('Predict Player Rating')
 
