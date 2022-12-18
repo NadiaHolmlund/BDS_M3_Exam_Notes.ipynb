@@ -233,5 +233,14 @@ if position == 'Goalkeeper':
         col4.write('')
         col5.metric(label="Mean Error", value='00.0')
         col6.write('')
-        with st.expander("Player Rating Explained"):
-            st.write('')
+ 
+
+# Setting up the rest of the page
+col1, col2, col3, col4, col5, col6 = st.columns([0.9, 0.9, 0.9, 0.9, 0.9, 1.5])
+col1.metric(label="Matches Played", value=matches_played, delta= 'avg. ' + str(round(matches_played_avg.mean(), 2)), delta_color='off')
+
+col2.metric(label="Minutes Played", value=f"{minutes_played:,}", delta='avg. ' + str(f"{round(minutes_played_avg.mean(), 2):,}"), delta_color='off')
+
+col3.metric(label="Yellow Cards", value=yellow_cards, delta='avg. ' + str(round(yellow_cards_avg.mean(), 2)), delta_color='off')
+
+col4.metric(label="Red Cards", value=red_cards, delta='avg. ' + str(round(red_cards_avg.mean(), 2)), delta_color='off')
