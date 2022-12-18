@@ -105,7 +105,7 @@ if position == 'Position':
  
 
 # Setting up the rest of the page
-col1, col2, col3, col4, col5, col6, col7, col8 = st.columns([1, 1, 2, 0.5, 1, 0.8, 1, 0.7])
+col1, col2, col3, col4, col5, col6, col7, col8 = st.columns([1, 1.2, 1.8, 0.5, 1, 0.8, 1, 0.7])
 col1.metric(label="Matches Played", value='00.0', delta= 'avg. ', delta_color='off')
 col2.write('')
 col3.metric(label="Minutes Played", value='00.0', delta='avg. ', delta_color='off')
