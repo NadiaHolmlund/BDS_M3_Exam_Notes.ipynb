@@ -95,7 +95,6 @@ if position == 'Goalkeeper':
 
     # Setting up the sidebar
     with st.sidebar:
-        with st.expander('Input Player Performance'):
             col1, col2 = st.columns(2)
             feature_0 = col1.number_input('Feature 0')
             feature_2 = col1.number_input('Feature 2')
