@@ -29,14 +29,16 @@ st.markdown(
 
 # Setting up the default sidebar
 with st.sidebar:
-    player = st.text_input((''),('Player'))
-    team = st.text_input((''),('Team'))
-    age = st.text_input((''),('Age'))
-    weight = st.text_input((''),('Weight'))
-    foot = st.selectbox((''),('Foot', 'Right', 'Left', 'Both', 'Unknown'))
-    height = st.text_input((''),('Height'))
-    nationality = st.text_input((''),('Nationality'))
-    position = st.selectbox((''),('Position', 'Goalkeeper', 'Central Defender', 'Full Back', 'Defensive Midfielder', 'Central Midfielder', 'Attacking Midfielder', 'Winger Midfielder', 'Forwarder'))
+    with st.expander('Input Player Information'):
+        player = st.text_input((''),('Player'))
+        col1, col2 = st.columns(2)
+        team = col1.text_input((''),('Team'))
+        age = col1.text_input((''),('Age'))
+        weight = col1.text_input((''),('Weight'))
+        foot = col2.selectbox((''),('Foot', 'Right', 'Left', 'Both', 'Unknown'))
+        height = col2.text_input((''),('Height'))
+        nationality = col2.text_input((''),('Nationality'))
+        position = st.selectbox((''),('Position', 'Goalkeeper', 'Central Defender', 'Full Back', 'Defensive Midfielder', 'Central Midfielder', 'Attacking Midfielder', 'Winger Midfielder', 'Forwarder'))
 
 
 
